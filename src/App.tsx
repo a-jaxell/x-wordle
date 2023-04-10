@@ -12,7 +12,6 @@ function App() {
     <div className="App">
       <h1>X-WORDLE</h1>
       <GuessWordContainer />
-      <p className="displayGuess"></p>
       
       <nav>
         {/* Highscore button should direct to the SSR Highscore page */}
