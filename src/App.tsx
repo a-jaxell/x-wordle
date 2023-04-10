@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import { useState } from "react";
+import "./App.css";
+import InputForm from "./frontend/components/GuessWord";
+import { GuessWordContainer } from './frontend/containers/GuessWordContainer';
 function App() {
-  const [count, setCount] = useState(0)
+  
+  // Dummy word
+  // TODO: Replace assignment with request to backend API
+  // Possibly a game object that consists of data related to a game session
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>X-WORDLE</h1>
+      <GuessWordContainer />
+      <p className="displayGuess"></p>
+      
+      <nav>
+        {/* Highscore button should direct to the SSR Highscore page */}
+        <button>Highscore</button>
+        {/* About button should render the static page */}
+        <button>About</button>
+      </nav>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+ 
+
+
+// skapa en rad rutor beroende på hur långt ordet är som blir passat in i komponenten
+// varje ruta är ett input fönster
+// det ska gå att skriva in
+// endast bokstäver i
+// de är tomma per default
