@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import InputForm from "./frontend/components/GuessWord";
 import { GuessWordContainer } from './frontend/containers/GuessWordContainer';
 function App() {
   
