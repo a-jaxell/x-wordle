@@ -9,6 +9,7 @@ export const GuessWordContainer = () => {
   // TODO: rework so it is stored in a state with other values from the backend
   // TODO: Write code for keeping it on the backend
   const word = ["b", "a", "n", "a", "n"];
+  
 
   // Add each letter from n input fields into an array on submit. where n is the length of the current word.
   const addLetterToArray = (event: Event) => {
@@ -21,7 +22,7 @@ export const GuessWordContainer = () => {
   const handleSubmit = (event: Event) => {
     // This event checks wether the guessed word matches or not.
     // TODO: Logic for interaction with the backend.
-    //
+
     event.preventDefault();
     let target = document.getElementById("currentGuess");
 

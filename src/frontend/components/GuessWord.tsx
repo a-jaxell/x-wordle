@@ -2,7 +2,7 @@
 import { styles } from '../styles'
 interface GuessWordType {
   word: string[];
-  handleChange: Function;
+  handleChange: Function
   handleSubmit: Function
   currentGuess: string[]
 }
@@ -20,7 +20,7 @@ export function GuessWord({ word, handleChange, currentGuess, handleSubmit }: Gu
               onChange={(ev) => handleChange(ev)}
               maxLength={1}
               key={i}
-              id={i}
+              id={i.toString()}
               type="text"
             />
           );
