@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { GuessWordContainer } from "./frontend/containers/GuessWordContainer";
+import { SettingsContainer } from "./frontend/containers/SettingsContainer";
 import { styles } from "./frontend/styles";
 function App() {
   // Dummy word
@@ -11,7 +12,7 @@ function App() {
     <div className='App'>
       <h1 className={styles.h1}>X-WORDLE</h1>
       <GuessWordContainer />
-
+      <SettingsContainer />
       <nav>
         {/* Highscore button should direct to the SSR Highscore page */}
         <button className={styles.button.primary}>
