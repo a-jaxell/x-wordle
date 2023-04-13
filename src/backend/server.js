@@ -1,12 +1,14 @@
 import express from "express";
 import words5 from './words/words5.js'
 import {findWord} from '../js/findWord.js'
+import ejs from 'ejs';
+import {highscores} from '../js/mock.js'
 
 const app = express();
 
 app.listen(5080);
 app.set("view engine", "ejs");
-app.set("views", "./src/template");
+app.set("views", './src/backend/templates');
 app.use(express.static("./public"));
 
 // Route for startpage
@@ -15,16 +17,16 @@ app.get("/", (req, res) => {
 });
 
 // Routes for /highscores
-app.get("/highscores", (req, res) => {
-  const highscores = [];
+app.get("/highscore", (req, res) => {
 
   //TODO : Code that filters the database of highscores and
   // returns the 10 fastest ones.
 
-  res.render("highscores.ejs", { highscores });
+  // currently sends mock data
+  res.render("highscore.ejs", { highscores });
 });
 // POST sends a new highscore to be added
-app.post("/highscores", (req, res) => {
+app.post("/highscore", (req, res) => {
   const newHighscore = {};
 
   // TODO: Check format of req.body

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev-backend": "",
+    "dev-backend": "nodemon ./src/backend/server.js",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -19,9 +19,11 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "jest": "^29.5.0",
     "mongoose": "^7.0.3",
+    "nodemon": "^2.0.22",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
     "vitest": "^0.29.7"
