@@ -1,22 +1,23 @@
 //Creates a box for a letter input
-
+import { styles } from '../styles'
 interface GuessWordType {
   word: string[];
-  onChange: Function;
+  handleChange: Function;
   handleSubmit: Function
   currentGuess: string[]
 }
 
-export function GuessWord({ word, onChange,currentGuess, handleSubmit }: GuessWordType) {
+export function GuessWord({ word, handleChange, currentGuess, handleSubmit }: GuessWordType) {
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
+      <form className={styles.guessForm}
+        onSubmit={(ev) => handleSubmit(ev)}
       >
         {word.map((e, i) => {
           return (
             <input
-              onChange={onChange}
+              className={styles.input}
+              onChange={(ev) => handleChange(ev)}
               maxLength={1}
               key={i}
               id={i}
@@ -24,9 +25,10 @@ export function GuessWord({ word, onChange,currentGuess, handleSubmit }: GuessWo
             />
           );
         })}
-        <button type="submit">Guess</button>
+        <br/>
+        <button className={styles.button.secondary} type="submit">Guess</button>
       </form>
-      <p id='currentGuess'>{currentGuess.join('')}</p>
+      <p className={styles.guess} id='currentGuess'>{currentGuess.join('')}</p>
     </>
   );
 }
