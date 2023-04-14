@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { GuessWordContainer } from "./frontend/containers/GuessWordContainer";
-import { SettingsContainer } from "./frontend/containers/SettingsContainer";
+import SettingsContainer from "./frontend/containers/SettingsContainer";
 import { styles } from "./frontend/styles";
 function App() {
   // Dummy word

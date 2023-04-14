@@ -1,22 +1,40 @@
 import { useState } from "react";
-import { Settings } from "../components/Settings";
+import Settings from "../components/Settings";
 
 type SettingsObject = {
   uniqueLetters: boolean;
-  wordLength: number;
+  wordLength: string;
 };
 
-export const SettingsContainer = () => {
+function SettingsContainer() {
   const [settings, setSettings] = useState<SettingsObject>({
-    wordLength: 5,
-    uniqueLetters: true,
+    wordLength: "5",
+    uniqueLetters: false,
   });
-  const handleChange = ({target}: Event) => {
-    const { id, value } = target;
-    
-    setSettings((prev) => {
-        id.value ? prev.wordLength = value : prev.uniqueLetters = id.checked;
-    })
+  const wordLengthChange = (
+      event: React.ChangeEvent<HTMLSelectElement>
+      ): void => {
+          const { id, value } = event.target;
+          setSettings((prevSettings) => ({
+              ...prevSettings,
+              [id]: value,
+            }));
+            console.log(settings);
   };
-  return <Settings handleChange={handleChange} settings={settings} />;
-};
+  const uniqueChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    const { id } = event.target;
+    setSettings((prevSettings) => ({
+      ...prevSettings,
+      [id]: event.target.checked,
+    }));
+  };
+
+  return (
+    <Settings
+      handleLengthChange={wordLengthChange}
+      handleUniqueChange={uniqueChange}
+      settings={settings}
+    />
+  );
+}
+export default SettingsContainer;

@@ -1,6 +1,6 @@
 export type SettingsObject = {
     uniqueLetters: boolean
-    wordLength: number
+    wordLength: string
 }
 
 export interface GameData extends SettingsObject  {
