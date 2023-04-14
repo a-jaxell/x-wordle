@@ -4,7 +4,11 @@
   padding: 2rem;
   text-align: center;
 }
-
+.App{
+  background-color: blanchedalmond;
+  min-height: 600px;
+  border-radius: 5px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
