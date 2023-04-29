@@ -13,7 +13,7 @@ app.use(express.static("./public"));
 
 // Route for startpage
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.render("index.ejs");
 });
 
 // Routes for /highscores
